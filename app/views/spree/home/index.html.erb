@@ -1,0 +1,44 @@
+<% content_for :sidebar do %>
+  <div data-hook="homepage_sidebar_navigation">
+    <%= render :partial => 'spree/shared/taxonomies' %>
+
+<script type="text/javascript" charset="utf-8">
+  (function(G,o,O,g,L,e){G[g]=G[g]||function(){(G[g]['q']=G[g]['q']||[]).push(
+  arguments)},G[g]['t']=1*new Date})(window,document,'script','_googCsa');
+</script>
+<div id='afscontainer1'></div>
+
+<script type="text/javascript" charset="utf-8">
+
+var pageOptions = {
+  "pubId": "pub-9616389000213823",
+  "query": "hotels",
+  "adPage": 1,
+  "location": true,
+  "sellerRatings": true,
+  "siteLinks": true
+};
+
+var adblock1 = {
+  "container": "afscontainer1",
+  "width": "700",
+  "number": 2,
+  "detailedAttribution": true
+};
+
+_googCsa('ads', pageOptions, adblock1);
+
+</script>
+
+</div>
+<% end %>
+
+
+<div data-hook="homepage_products">
+  <% cache(cache_key_for_products) do %>
+    <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+  <% end %>
+</div>
+<div>
+<%= render :partial => 'spree/shared/adsense', :locals => { :products => @products } %>
+</div>
